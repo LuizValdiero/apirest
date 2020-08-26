@@ -47,3 +47,16 @@ create user user_apirest with encrypted password '123456';
 grant all privileges on database bd_apirest to user_apirest;
 ```
 
+### Deploy on Heroku
+
+
+[Install Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
+```
+sudo snap install --classic heroku
+```
+
+[Heroku Page](https://dashboard.heroku.com/apps)
+
+> Create new APP
+> Deploy using Heroku Git
+
