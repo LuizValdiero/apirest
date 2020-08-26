@@ -3,9 +3,7 @@ tutorial: curso de spring REST para iniciantes
 
 
 ### PostgreSQL
-Install
-
-https://www.postgresql.org/download/linux/ubuntu/
+> [Install](https://www.postgresql.org/download/linux/ubuntu/)
 
 ```
 # Create the file repository configuration:
@@ -21,13 +19,13 @@ sudo apt-get update
 # If you want a specific version, use 'postgresql-12' or similar instead of 'postgresql':
 sudo apt-get -y install postgresql
 ```
-Install pgAdmin4
+> Install pgAdmin4
 
 ```
 sudo apt install pgadmin
 ```
 
-Modify root password
+> Modify root password
 
 ```
 sudo su - postgres
@@ -37,7 +35,7 @@ psql -d postgres -U postgres
 alter user postgres with password 'xxxx'
 ```
 
-create user and db
+> create user and db
 
 ```
 sudo -u postgres psql
@@ -58,6 +56,7 @@ sudo snap install --classic heroku
 [Heroku Page](https://dashboard.heroku.com/apps)
 
 > Create new APP
+
 > Deploy using Heroku Git
 
 ```
