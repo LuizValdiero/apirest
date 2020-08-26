@@ -60,3 +60,8 @@ sudo snap install --classic heroku
 > Create new APP
 > Deploy using Heroku Git
 
+```
+heroku login
+heroku git:remote -a first-apirest
+git push heroku master
+```
