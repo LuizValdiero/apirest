@@ -1,5 +1,5 @@
-# spring_boot_project
-tutorial: curso de spring REST para iniciantes
+# apirest
+tutorial: [API REST - SPRING BOOT](https://www.youtube.com/playlist?list=PL8iIphQOyG-D2FP9wkg12AavzmVRWEcnJ)
 
 
 ### PostgreSQL
@@ -22,7 +22,7 @@ sudo apt-get -y install postgresql
 > Install pgAdmin4
 
 ```
-sudo apt install pgadmin
+sudo apt install pgadmin4
 ```
 
 > Modify root password
