@@ -18,6 +18,7 @@ import com.demo.produtos.repository.ProdutoRepository;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
+import com.demo.produtos.error.ResourceNotFoundException;
 import com.demo.produtos.models.Produto;
 
 @RestController
@@ -29,6 +30,11 @@ public class ProdutoResource {
 	@Autowired
 	ProdutoRepository produtoRepository;
 	
+	private void verifyIfStudentExists(long id) {
+		if (produtoRepository.findById(id) == null)
+			throw new ResourceNotFoundException("Produto não encontrado.");
+	}
+	
 	@GetMapping("/produtos")
 	@ApiOperation(value="Retorna uma lista de produtos")
 	public List<Produto> listaProdutos() {
@@ -38,6 +44,7 @@ public class ProdutoResource {
 	@GetMapping("/produtos/{id}")
 	@ApiOperation(value="Retorna produto pelo Id.")
 	public Produto listaProdutoPorId(@PathVariable(value="id") long id) {
+		verifyIfStudentExists(id);
 		return produtoRepository.findById(id);
 	}
 	
@@ -56,12 +63,14 @@ public class ProdutoResource {
 	@DeleteMapping("/produtos/{id}")
 	@ApiOperation(value="delete produto pelo Id")
 	public void deletaProdutoPorId(@PathVariable(value="id") long id) {
+		verifyIfStudentExists(id);
 		produtoRepository.deleteById(id);
 	}
 
-	@PutMapping("/produtos")
+	@PutMapping("/produtos ")
 	@ApiOperation(value="Altera produto")
 	public Produto atualizaProduto(@RequestBody Produto produto) {
+		verifyIfStudentExists(produto.getId());
 		return produtoRepository.save(produto);
 	}
 }
